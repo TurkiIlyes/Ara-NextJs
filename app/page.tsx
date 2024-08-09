@@ -1,4 +1,4 @@
-import HomePage from "@/components/Swiper/Hero/Home/HomePage";
+import HomePage from "@/components/Home/HomePage";
 
 import React from "react";
 

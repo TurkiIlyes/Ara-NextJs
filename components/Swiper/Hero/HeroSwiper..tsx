@@ -50,7 +50,7 @@ const HeroSwiper = () => {
         }}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className=" hero-swiper h-full w-full"
+        className=" hero-swiper h-full w-full bg-grayscale-900 "
       >
         {swiperData.map((item, index) => (
           <SwiperSlide key={index}>

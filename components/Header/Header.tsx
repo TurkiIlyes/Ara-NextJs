@@ -6,10 +6,19 @@ import HeaderMobileNavBar from "../NavBar/HeaderMobileNavBar";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
+  let prevScrollY = 0;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 0);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY && currentScrollY > 0) {
+        setIsSticky(true);
+      } else if (currentScrollY < prevScrollY) {
+        setIsSticky(false);
+      }
+
+      prevScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);

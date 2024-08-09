@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSwiper from "../HeroSwiper.";
+import HeroSwiper from "../../Swiper/Hero/HeroSwiper.";
 
 const Hero = () => {
   return <HeroSwiper />;

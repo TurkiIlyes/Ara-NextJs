@@ -30,15 +30,26 @@ const config = {
     },
     extend: {
       colors: {
+        primary: "#0F626B",
+        grayscale: {
+          900: "#14142B",
+          800: "#4E4B66",
+          700: "#6E7191",
+          600: "#A0A3BD",
+          500: "#D9DBE9",
+          400: "#EFF0F6",
+          300: "#F7F7FC",
+          200: "#FCFCFC",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
+        // primary: {
+        //   DEFAULT: "hsl(var(--primary))",
+        //   foreground: "hsl(var(--primary-foreground))",
+        // },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
