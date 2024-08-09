@@ -25,13 +25,13 @@ const links = [
 
 const HeaderNavBar = () => {
   return (
-    <div className=" flex-1 hidden sm:flex justify-end">
+    <div className=" flex-1 hidden md:flex justify-end">
       {links.map((item, i) => {
         return (
           <Link
             key={i}
             href={item.link}
-            className=" py-6 pl-16 text-base font-medium "
+            className=" h-full pl-14 text-base font-medium "
           >
             {item.title}
           </Link>

@@ -1,6 +1,6 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import {
   Sheet,
@@ -37,16 +37,20 @@ const links = [
 
 const HeaderMobileNavBar = () => {
   return (
-    <div className=" sm:hidden">
+    <div className=" flex-1 flex md:hidden justify-end ">
       <Sheet>
         <SheetTrigger>
-          <FontAwesomeIcon icon={faList} className=" w-5 h-5" />
+          <FontAwesomeIcon icon={faBars} className=" w-5 h-5" />
         </SheetTrigger>
-        <SheetContent side="left" className="w-[250px] px-4 pt-14">
-          <div className=" flex flex-col w-full h-full text-grayscale-900 pb-28  overflow-y-scroll scroll">
+        <SheetContent className="w-[240px] px-4 pt-14">
+          <div className=" flex flex-col w-full h-full text-grayscale-900 ">
             {links.map((item, i) => {
               return (
-                <Link key={i} href={item.link}>
+                <Link
+                  key={i}
+                  href={item.link}
+                  className=" flex justify-between items-center w-full py-4 px-4 text-lg font-medium text-grayscale-900  hover:bg-grayscale-300 rounded-lg "
+                >
                   {item.title}
                 </Link>
               );

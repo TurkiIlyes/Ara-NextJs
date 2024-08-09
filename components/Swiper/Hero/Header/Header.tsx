@@ -25,9 +25,9 @@ const Header = () => {
         isSticky ? "bg-white text-black shadow-md" : "bg-transparent text-white"
       } ${isSticky ? "fixed top-0 left-0" : "absolute top-0 left-0"}`}
     >
-      <div className="container flex items-center py-4 px-6">
+      <div className="container h-28 flex items-center py-4 px-6">
         <Link href="/" className=" text-xl font-semibold ">
-          Ara consolting
+          Ara consulting
         </Link>
         <HeaderNavBar />
         <HeaderMobileNavBar />
