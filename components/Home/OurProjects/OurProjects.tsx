@@ -35,7 +35,7 @@ const OurProjects = () => {
         return <ProjectBox key={i} img={item.img} desc={item.desc} index={i} />;
       })}
       <span className=" text-xl font-medium text-primary ">
-        Gestion Digitale de l'Énergie et de l'Environnement
+        Gestion Digitale de l&lsquo;Énergie et de l&lsquo;Environnement
       </span>
       {energyEnvData.map((item, i) => {
         return <ProjectBox key={i} img={item.img} desc={item.desc} index={i} />;
