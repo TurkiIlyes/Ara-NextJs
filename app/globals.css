@@ -75,6 +75,16 @@
   .hero-swiper .swiper-pagination-bullet-active {
     background-color: white !important;
   }
+
+  .our-clients-swiper .swiper-pagination-bullet {
+    background-color: #14142b !important;
+    width: 10px;
+    height: 10px;
+  }
+
+  .our-clients-swiper .swiper-pagination-bullet-active {
+    background-color: #0f626b !important;
+  }
 }
 
 /* @layer utilities {

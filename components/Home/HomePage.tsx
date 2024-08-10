@@ -4,6 +4,8 @@ import WhoWeAre from "./WhoWeAre/WhoWeAre";
 import SectionContainer from "./SectionContainer/SectionContainer";
 import OurServices from "./OurServices/OurServices";
 import OurProjects from "./OurProjects/OurProjects";
+import OurClientsSwiper from "../Swiper/OurClients/OurClientsSwiper";
+import AraStats from "./AraStats/AraStats";
 
 const HomePage = () => {
   return (
@@ -18,6 +20,12 @@ const HomePage = () => {
       </SectionContainer>
       <SectionContainer title="Nos Projet">
         <OurProjects />
+      </SectionContainer>
+      <SectionContainer title="Nos Clients">
+        <AraStats />
+      </SectionContainer>
+      <SectionContainer title="ARA on Chiffres">
+        <OurClientsSwiper />
       </SectionContainer>
     </div>
   );
