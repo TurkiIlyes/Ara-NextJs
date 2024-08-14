@@ -18,7 +18,7 @@ const swiperData = [
     desc: " Loream ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
-    img: "/Imgs/Hero/Hero1.jpg",
+    img: "/Imgs/Hero/Hero3.png",
     title: "title1",
     desc: " Loream ipsum dolor sit amet consectetur adipisicing elit.",
   },

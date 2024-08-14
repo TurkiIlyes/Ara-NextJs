@@ -11,22 +11,30 @@ const HomePage = () => {
   return (
     <div className=" relative">
       <Hero />
-      <Features />
-      <SectionContainer title="Qui Sommes Nous">
-        <WhoWeAre />
-      </SectionContainer>
-      <SectionContainer title="Nous Activité">
-        <OurServices />
-      </SectionContainer>
-      <SectionContainer title="Nos Projet">
-        <OurProjects />
-      </SectionContainer>
-      <SectionContainer title="Nos Clients">
-        <AraStats />
-      </SectionContainer>
-      <SectionContainer title="ARA on Chiffres">
-        <OurClientsSwiper />
-      </SectionContainer>
+      <div
+        style={{
+          backgroundImage: "url('/Imgs/back.png')",
+          backgroundPosition: "center", // Centers the image
+          backgroundRepeat: "repeat", // Prevents the image from repeating
+        }}
+      >
+        <Features />
+        <SectionContainer title="Qui Sommes Nous">
+          <WhoWeAre />
+        </SectionContainer>
+        <SectionContainer title="Nous Activité">
+          <OurServices />
+        </SectionContainer>
+        <SectionContainer title="Nos Projet">
+          <OurProjects />
+        </SectionContainer>
+        <SectionContainer title="Nos Clients">
+          <OurClientsSwiper />
+        </SectionContainer>
+        <SectionContainer title="ARA on Chiffres">
+          <AraStats />
+        </SectionContainer>
+      </div>
     </div>
   );
 };

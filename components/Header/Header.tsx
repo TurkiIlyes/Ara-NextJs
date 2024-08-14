@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full z-50 transition-all duration-300 ${
+      className={`w-full z-50 transition-all duration-500 ${
         isSticky ? "bg-white text-black shadow-md" : "bg-transparent text-white"
       } ${isSticky ? "fixed top-0 left-0" : "absolute top-0 left-0"}`}
     >
