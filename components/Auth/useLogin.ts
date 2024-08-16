@@ -1,3 +1,4 @@
+"use client";
 import { handleError } from "@/utils/handleError";
 import { validateFormFields } from "@/utils/validateFormFields";
 import { credentialsSignInValidationRules } from "@/utils/validationRules";
