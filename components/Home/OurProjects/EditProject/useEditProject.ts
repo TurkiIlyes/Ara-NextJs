@@ -36,7 +36,7 @@ const useEditProject = (
   id: string,
   img: string,
   desc: string,
-  type: string
+  type: flexibleProjectType["type"]
 ) => {
   const dispatch = useAppDispatch();
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -44,7 +44,7 @@ const useEditProject = (
     useState<flexibleProjectType>(initialProjectState);
 
   useEffect(() => {
-    setProjectData((prevData) => ({
+    setProjectData(() => ({
       name: desc,
       image: img,
       type: type,
