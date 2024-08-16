@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 
-import authReducer from "./auth/authSlice";
+import projectReducer from "./Project/projectSlice";
 
 export const makeStore = () =>
   configureStore({
     reducer: {
-      auth: authReducer,
+      project: projectReducer,
     },
   });
 

@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { addProject, removeProject } from "./projectThunks";
+import { addProject, editProject, removeProject } from "./projectThunks";
 
 interface ProjectStateType {
   loading: boolean;
   error: string | null;
   addSuccess: boolean;
+  editSuccess: boolean;
   removeSuccess: boolean;
 }
 
@@ -12,6 +13,7 @@ const initialState: ProjectStateType = {
   loading: false,
   error: null,
   addSuccess: false,
+  editSuccess: false,
   removeSuccess: false,
 };
 
@@ -21,6 +23,10 @@ const projectSlice = createSlice({
   reducers: {
     resetAddSuccess: (state) => {
       state.addSuccess = false;
+    },
+    resetEditSuccess: (state) => {
+      // New reducer to reset edit success
+      state.editSuccess = false;
     },
     resetRemoveSuccess: (state) => {
       state.removeSuccess = false;
@@ -42,6 +48,20 @@ const projectSlice = createSlice({
         state.loading = false;
         state.error = "An error occurred while adding the project";
         state.addSuccess = false;
+      })
+      .addCase(editProject.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.editSuccess = false;
+      })
+      .addCase(editProject.fulfilled, (state) => {
+        state.loading = false;
+        state.editSuccess = true;
+      })
+      .addCase(editProject.rejected, (state) => {
+        state.loading = false;
+        state.error = "An error occurred while editing the contactUs";
+        state.editSuccess = false;
       })
       .addCase(removeProject.pending, (state) => {
         state.loading = true;

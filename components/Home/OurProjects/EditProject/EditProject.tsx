@@ -11,11 +11,22 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import CustomSelectImage from "@/components/Common/Custom/CustomSelectImage";
-import useAddProject from "./useAddProject";
+import useEditProject from "./useEditProject";
 import CustomTextArea from "@/components/Common/Custom/CustomTextArea";
 import CustomSelect from "@/components/Common/Custom/CustomSelect";
 import CustomButtons from "@/components/Common/Custom/CustomButtons";
-const AddProject = () => {
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+const EditProject = ({
+  id,
+  img,
+  desc,
+  type,
+}: {
+  id: string;
+  img: string;
+  desc: string;
+  type: "MDTR" | "GDEE";
+}) => {
   const {
     projectData,
     typeData,
@@ -25,15 +36,15 @@ const AddProject = () => {
 
     handleSubmit,
     handleReset,
-  } = useAddProject();
+  } = useEditProject(id, img, desc, type);
   return (
     <Dialog>
-      <DialogTrigger className=" w-full h-full  flex justify-center items-center bg-grayscale-600 z-10 rounded-full">
-        <FontAwesomeIcon icon={faPlus} size="1x" className=" text-white " />
+      <DialogTrigger className=" h-6 w-6 flex items-center justify-center bg-grayscale-900 rounded-full">
+        <FontAwesomeIcon icon={faPenToSquare} className="w-3 h-3 text-white" />
       </DialogTrigger>
       <DialogContent className=" flex flex-col items-center gap-6 w-full px-14 ">
         <DialogTitle className="text-center text-xl capitalize text-grayscale-900 font-medium ">
-          add new project
+          Edit project
         </DialogTitle>
         <DialogDescription className=" w-9/12  flex flex-col gap-4 ">
           <CustomSelect<"MDTR" | "GDEE">
@@ -65,4 +76,4 @@ const AddProject = () => {
   );
 };
 
-export default AddProject;
+export default EditProject;

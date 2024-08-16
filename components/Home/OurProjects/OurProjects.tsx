@@ -1,7 +1,8 @@
 import { fetchProject } from "@/utils/Api/projectAPi";
 import ProjectBox from "./ProjectBox";
 import { ProjectType } from "@/redux/Project/projectThunks";
-
+import { getServerSession } from "next-auth";
+import authOptions from "@/lib/NextAuth/authOptions";
 const realtimeData = [
   {
     img: "/Imgs/OurProjects/Araner.png",
@@ -27,13 +28,16 @@ const energyEnvData = [
     desc: "ARADIS notre solution digitale de management 4.0 et de gestion Opérationnelle qui transformera la gestion des processus industriels grâce à une solution digitale avancée",
   },
 ];
-const OurProjects = ({
+const OurProjects = async ({
   MDTRProjects,
   GDEEProjects,
 }: {
   MDTRProjects: ProjectType[];
   GDEEProjects: ProjectType[];
 }) => {
+  const session = await getServerSession(authOptions);
+
+  const isLogged = session?.user?.id ? true : false;
   return (
     <div className=" flex flex-col gap-14 ">
       {MDTRProjects.length > 0 && (
@@ -43,19 +47,35 @@ const OurProjects = ({
           </span>
           {MDTRProjects.map((item, i) => {
             return (
-              <ProjectBox key={i} img={item.image} desc={item.name} index={i} />
+              <ProjectBox
+                key={i}
+                img={item.image}
+                desc={item.name}
+                type={item.type}
+                index={i}
+                id={item._id}
+                isLogged={isLogged}
+              />
             );
           })}
         </>
       )}
-      {MDTRProjects.length > 0 && (
+      {GDEEProjects.length > 0 && (
         <>
           <span className=" text-xl font-medium text-primary ">
             Gestion Digitale de l&lsquo;Énergie et de l&lsquo;Environnement
           </span>
-          {MDTRProjects.map((item, i) => {
+          {GDEEProjects.map((item, i) => {
             return (
-              <ProjectBox key={i} img={item.image} desc={item.name} index={i} />
+              <ProjectBox
+                key={i}
+                img={item.image}
+                desc={item.name}
+                type={item.type}
+                index={i}
+                id={item._id}
+                isLogged={isLogged}
+              />
             );
           })}
         </>
