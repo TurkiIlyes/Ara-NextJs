@@ -7,7 +7,15 @@ import OurProjects from "./OurProjects/OurProjects";
 import OurClientsSwiper from "../Swiper/OurClients/OurClientsSwiper";
 import AraStats from "./AraStats/AraStats";
 
-const HomePage = () => {
+import { fetchProject } from "@/utils/Api/projectAPi";
+
+const HomePage = async () => {
+  const projects = await fetchProject();
+  const MDTRProjects = projects.filter((project) => project.type === "MDTR");
+  const GDEEProjects = projects.filter((project) => project.type === "GDEE");
+  console.log("OurProjects");
+  console.log(MDTRProjects);
+  console.log(GDEEProjects);
   return (
     <div className=" relative">
       <Hero />
@@ -22,12 +30,19 @@ const HomePage = () => {
         <SectionContainer title="Qui Sommes Nous">
           <WhoWeAre />
         </SectionContainer>
-        <SectionContainer title="Nous Activité">
+        <SectionContainer title="Nos Activités">
           <OurServices />
         </SectionContainer>
-        <SectionContainer title="Nos Projet">
-          <OurProjects />
-        </SectionContainer>
+
+        {projects.length > 0 && (
+          <SectionContainer title="Nos Projets">
+            <OurProjects
+              MDTRProjects={MDTRProjects}
+              GDEEProjects={GDEEProjects}
+            />
+          </SectionContainer>
+        )}
+
         <SectionContainer title="Nos Clients">
           <OurClientsSwiper />
         </SectionContainer>

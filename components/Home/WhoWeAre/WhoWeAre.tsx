@@ -17,14 +17,26 @@ const WhoWeAre = () => {
           client. Son engagement envers l&lsquo;innovation en fait un partenaire
           stratégique pour les entreprises dans un monde de plus en plus
           connecté et automatisé.
+          <br />
+          <br />
+          ARA COMPANY a collaboré avec des entreprises dans plusieurs pays,
+          contribuant à leur transformation numérique et à leur succès
+          industriel.
         </p>
+        <div className="inline-flex gap-4 w-[60px] ml-[20%] mt-[20px]">
+          <img src="/Imgs/Flags/Tunisia.png" />
+          <img src="/Imgs/Flags/Algeria.png" />
+          <img src="/Imgs/Flags/Italia.png" />
+          <img src="/Imgs/Flags/Marroco.png" />
+        </div>
       </div>
       <div className=" w-7/12 relative hidden sm:flex flex-col gap-4 ">
         <Image
-          src="/Imgs/WhoWeAre/WhoWeAre.png"
+          src="/Imgs/WhoWeAre/meet.png"
           alt="WhoWeAre"
           width={1000}
           height={1000}
+          className="h-[550px] w-[800px]"
         />
       </div>
     </div>

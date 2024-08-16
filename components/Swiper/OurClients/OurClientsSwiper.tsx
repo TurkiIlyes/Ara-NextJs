@@ -7,20 +7,19 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const swiperData = [
-  "/Imgs/Hero/Hero1.jpg",
-  "/Imgs/Hero/Hero2.png",
-  "/Imgs/Hero/Hero1.jpg",
-  "/Imgs/Hero/Hero2.png",
-  "/Imgs/Hero/Hero1.jpg",
-  "/Imgs/Hero/Hero2.png",
-  "/Imgs/Hero/Hero1.jpg",
-  "/Imgs/Hero/Hero2.png",
-  "/Imgs/Hero/Hero1.jpg",
-  "/Imgs/Hero/Hero2.png",
-  "/Imgs/Hero/Hero1.jpg",
-  "/Imgs/Hero/Hero2.png",
-  "/Imgs/Hero/Hero1.jpg",
-  "/Imgs/Hero/Hero2.png",
+  "/Imgs/OurClient/Client1.png",
+  "/Imgs/OurClient/Client2.png",
+  "/Imgs/OurClient/Client1.png",
+  "/Imgs/OurClient/Client2.png",
+  "/Imgs/OurClient/Client1.png",
+  "/Imgs/OurClient/Client2.png",
+  "/Imgs/OurClient/Client1.png",
+  "/Imgs/OurClient/Client2.png",
+  "/Imgs/OurClient/Client1.png",
+  "/Imgs/OurClient/Client2.png",
+  "/Imgs/OurClient/Client1.png",
+  "/Imgs/OurClient/Client2.png",
+  
 ];
 
 import OurClientsSlide from "./OurClientsSlide";
@@ -60,7 +59,7 @@ const OurClientsSwiper = () => {
         centeredSlidesBounds={true}
         centerInsufficientSlides={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className=" our-clients-swiper h-full w-full !py-10 "
+        className=" our-clients-swiper h-full w-full !pb-16 "
       >
         {swiperData.map((item, index) => (
           <SwiperSlide key={index}>

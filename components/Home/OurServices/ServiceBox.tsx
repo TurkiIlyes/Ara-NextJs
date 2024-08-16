@@ -18,7 +18,7 @@ const ServiceBox = ({
       />
       <div className=" h-[240px] px-6 py-8 flex flex-col items-center gap-4 border-[1px] border-grayscale-500 rounded-lg ">
         <span className=" text-lg font-bold text-primary ">{title}</span>
-        <p className=" text-justify text-sm leading-loose font-medium text-grayscale-700 ">
+        <p className=" text-center text-sm leading-loose font-medium text-grayscale-700 ">
           {description}
         </p>
       </div>

@@ -9,18 +9,18 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const swiperData = [
   {
     img: "/Imgs/Hero/Hero1.jpg",
-    title: "title1",
-    desc: " Loream ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Innovation",
+    desc: "Nous plaçons l'Innovation au cœur de nos projets pour anticiper l'avenir et créer de la valeur ajoutée.",
   },
   {
     img: "/Imgs/Hero/Hero2.png",
-    title: "title1",
-    desc: " Loream ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Responsabilité Environnementale",
+    desc: "Nous réduisons l'empreinte carbone de nos clients et préservons les ressources pour l'avenir.",
   },
   {
     img: "/Imgs/Hero/Hero3.png",
-    title: "title1",
-    desc: " Loream ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Agilité",
+    desc: "Les évolutions sont des opportunités. Notre réactivité nous permet de recruter et de nous adapter rapidement.",
   },
 ];
 

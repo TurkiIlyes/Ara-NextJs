@@ -1,4 +1,6 @@
+import { fetchProject } from "@/utils/Api/projectAPi";
 import ProjectBox from "./ProjectBox";
+import { ProjectType } from "@/redux/Project/projectThunks";
 
 const realtimeData = [
   {
@@ -25,21 +27,39 @@ const energyEnvData = [
     desc: "ARADIS notre solution digitale de management 4.0 et de gestion Opérationnelle qui transformera la gestion des processus industriels grâce à une solution digitale avancée",
   },
 ];
-const OurProjects = () => {
+const OurProjects = ({
+  MDTRProjects,
+  GDEEProjects,
+}: {
+  MDTRProjects: ProjectType[];
+  GDEEProjects: ProjectType[];
+}) => {
   return (
     <div className=" flex flex-col gap-14 ">
-      <span className=" text-xl font-medium text-primary ">
-        Monitoring et Digitalisation en Temps Réel
-      </span>
-      {realtimeData.map((item, i) => {
-        return <ProjectBox key={i} img={item.img} desc={item.desc} index={i} />;
-      })}
-      <span className=" text-xl font-medium text-primary ">
-        Gestion Digitale de l&lsquo;Énergie et de l&lsquo;Environnement
-      </span>
-      {energyEnvData.map((item, i) => {
-        return <ProjectBox key={i} img={item.img} desc={item.desc} index={i} />;
-      })}
+      {MDTRProjects.length > 0 && (
+        <>
+          <span className=" text-xl font-medium text-primary ">
+            Monitoring et Digitalisation en Temps Réel
+          </span>
+          {MDTRProjects.map((item, i) => {
+            return (
+              <ProjectBox key={i} img={item.image} desc={item.name} index={i} />
+            );
+          })}
+        </>
+      )}
+      {MDTRProjects.length > 0 && (
+        <>
+          <span className=" text-xl font-medium text-primary ">
+            Gestion Digitale de l&lsquo;Énergie et de l&lsquo;Environnement
+          </span>
+          {MDTRProjects.map((item, i) => {
+            return (
+              <ProjectBox key={i} img={item.image} desc={item.name} index={i} />
+            );
+          })}
+        </>
+      )}
     </div>
   );
 };

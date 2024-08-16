@@ -1,22 +1,22 @@
-import { faTruckFast } from "@fortawesome/free-solid-svg-icons";
+import { faCar, faUsers, faBuilding, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
 import StatBox from "./StatBox";
 
 const statsData = [
   {
-    icon: faTruckFast,
+    icon: faUsers,
     title: "12 Directs",
     subTitle: "09 Inderectes",
   },
   {
-    icon: faTruckFast,
+    icon: faBuilding,
     title: "02 Offices",
   },
   {
-    icon: faTruckFast,
+    icon: faClipboardCheck,
     title: "28 Projets",
   },
   {
-    icon: faTruckFast,
+    icon: faCar,
     title: "02 Vehicules d'assistance",
   },
 ];

@@ -4,7 +4,11 @@ import HeaderNavBar from "../NavBar/HeaderNavBar";
 import { useEffect, useState } from "react";
 import HeaderMobileNavBar from "../NavBar/HeaderMobileNavBar";
 
-const Header = () => {
+const Header = ({
+  session,
+}: {
+  session?: { user?: { id?: string } } | null;
+}) => {
   const [isSticky, setIsSticky] = useState(false);
   let prevScrollY = 0;
 
@@ -38,8 +42,8 @@ const Header = () => {
         <Link href="/" className=" text-xl font-semibold ">
           Ara consulting
         </Link>
-        <HeaderNavBar />
-        <HeaderMobileNavBar />
+        <HeaderNavBar session={session} />
+        <HeaderMobileNavBar session={session} />
       </div>
     </header>
   );

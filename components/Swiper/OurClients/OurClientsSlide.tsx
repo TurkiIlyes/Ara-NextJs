@@ -8,7 +8,7 @@ const OurClientsSlide = ({ img }: { img: string }) => {
         width={800}
         height={800}
         alt="img"
-        className=" w-40 aspect-[4/2] rounded-md "
+        className=" w-40 aspect-[4/2] rounded-md grayscale-[100%] h-[50px]"
       />
     </div>
   );

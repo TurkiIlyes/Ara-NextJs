@@ -11,31 +11,38 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Link from "next/link";
+import SignOutButton from "./SignOutButton";
 
 const links = [
   {
-    title: "Home",
+    title: "ARA COMPANY",
     link: "/",
   },
   {
-    title: "About",
+    title: "Activités",
     link: "/about",
   },
   {
-    title: "Contact",
+    title: "Projets",
     link: "/contact",
   },
   {
-    title: "Blog",
+    title: "Clients",
     link: "/blog",
   },
   {
-    title: "Portfolio",
+    title: "Contact Us",
     link: "/portfolio",
   },
 ];
 
-const HeaderMobileNavBar = () => {
+const HeaderMobileNavBar = ({
+  session,
+}: {
+  session?: { user?: { id?: string } } | null;
+}) => {
+  console.log("HeaderMobileNavBar");
+  console.log(session);
   return (
     <div className=" flex-1 flex md:hidden justify-end ">
       <Sheet>
@@ -55,6 +62,11 @@ const HeaderMobileNavBar = () => {
                 </Link>
               );
             })}
+            {session?.user?.id && (
+              <div className=" px-6 py-2">
+                <SignOutButton />
+              </div>
+            )}
           </div>
         </SheetContent>
       </Sheet>
