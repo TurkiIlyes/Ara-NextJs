@@ -1,7 +1,12 @@
+import { Suspense } from "react";
 import Login from "@/components/Auth/Login";
 
 const page = () => {
-  return <Login />;
+  return (
+    <Suspense>
+      <Login />
+    </Suspense>
+  );
 };
 
 export default page;
