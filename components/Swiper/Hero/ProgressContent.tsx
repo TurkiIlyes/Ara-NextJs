@@ -11,8 +11,8 @@ const ProgressContent = ({ progressCircle }: { progressCircle: any }) => {
             style={{
               strokeWidth: "4px",
               fill: "none",
-              strokeDasharray: "125.6", // Circumference
-              strokeDashoffset: "125.6", // Initial offset
+              strokeDasharray: "125.6",
+              strokeDashoffset: "125.6",
               transform: "rotate(-90deg)",
               transformOrigin: "center",
             }}

@@ -1,7 +1,7 @@
 "use client";
 import { addProject, flexibleProjectType } from "@/redux/Project/projectThunks";
-import { useState } from "react";
-import { useAppDispatch } from "@/redux/hooks";
+import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   customHandleChange,
   customHandleSubmit,
@@ -10,6 +10,8 @@ import {
 import { validateFormFields } from "@/utils/validateFormFields";
 import { handleError } from "@/utils/handleError";
 import { verifyProjectValidationRules } from "@/utils/validationRules";
+import { useRouter } from "next/navigation";
+import { resetAddSuccess } from "@/redux/Project/projectSlice";
 
 const typeData = [
   {
@@ -29,10 +31,19 @@ const initialProjectState: flexibleProjectType = {
 };
 
 const useAddProject = () => {
+  const addSuccess = useAppSelector((state) => state.project.addSuccess);
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [projectData, setProjectData] =
     useState<flexibleProjectType>(initialProjectState);
+
+  useEffect(() => {
+    if (addSuccess) {
+      resetAddSuccess();
+      window.location.reload();
+    }
+  }, [addSuccess]);
 
   const handleChange = (
     e:
@@ -42,10 +53,10 @@ const useAddProject = () => {
     customHandleChange(e, setProjectData);
   };
 
-  const handleTypeChange = (status: flexibleProjectType["type"]) => {
+  const handleTypeChange = (type: flexibleProjectType["type"]) => {
     setProjectData((prevData) => ({
       ...prevData,
-      status,
+      type,
     }));
   };
 

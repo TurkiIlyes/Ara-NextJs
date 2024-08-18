@@ -13,7 +13,6 @@ const CustomSelect = <T,>({
   label: string;
   value?: string;
   onChange?: (currentValue: T, name?: string) => void;
-  // onChange?: (currentValue: string, name?: string) => void;
   name?: string;
   data?: { value: string; label: string }[];
   children?: React.ReactNode;
@@ -30,7 +29,6 @@ const CustomSelect = <T,>({
           data={data}
           selectedValue={value}
           onChange={(e: string, name?: string) => {
-            // e is now of type T
             if (onChange) {
               if (name) {
                 onChange(e as T, name);
@@ -39,16 +37,6 @@ const CustomSelect = <T,>({
               }
             }
           }}
-          // onChange={(e: string, name?: string) => {
-          //   if (onChange) {
-          //     if (name) {
-          //       onChange(e as T, name);
-          //     } else {
-          //       onChange(e as T);
-          //     }
-          //   }
-          // }}
-
           name={name}
           disabled={disabled}
           className=" bg-transparent shadow-none"

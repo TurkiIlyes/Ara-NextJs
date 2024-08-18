@@ -14,7 +14,7 @@ const swiperData = [
   },
   {
     img: "/Imgs/Hero/Hero2.png",
-    title: "Responsabilité Environnementale",
+    title: "Responsabilité",
     desc: "Nous réduisons l'empreinte carbone de nos clients et préservons les ressources pour l'avenir.",
   },
   {
@@ -60,10 +60,7 @@ const HeroSwiper = () => {
       </Swiper>
       <ProgressContent
         progressCircle={progressCircle}
-        // progressContent={progressContent}
       />
-      {/* <HeroButton className="prevHeroButton" icon="left" />
-      <HeroButton className="nextHeroButton" icon="right" /> */}
     </div>
   );
 };

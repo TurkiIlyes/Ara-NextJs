@@ -25,7 +25,6 @@ const projectSlice = createSlice({
       state.addSuccess = false;
     },
     resetEditSuccess: (state) => {
-      // New reducer to reset edit success
       state.editSuccess = false;
     },
     resetRemoveSuccess: (state) => {
@@ -82,4 +81,5 @@ const projectSlice = createSlice({
 
 export default projectSlice.reducer;
 
-export const { resetAddSuccess, resetRemoveSuccess } = projectSlice.actions;
+export const { resetAddSuccess, resetEditSuccess, resetRemoveSuccess } =
+  projectSlice.actions;

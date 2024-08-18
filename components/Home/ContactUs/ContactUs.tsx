@@ -15,43 +15,42 @@ const ContactUs = () => {
   } = useContactUs();
 
   return (
-    <div className=" container ">
-      <div className="  flex flex-col gap-5">
-        <div className=" flex gap-4">
-          <CustomInput
-            value={contactUsData.firstName}
-            onChange={handleChange}
-            label="Category first name"
-            placeholder="Enter First Name"
-            name="firstName"
-          />
-          <CustomInput
-            value={contactUsData.lastName}
-            onChange={handleChange}
-            label="Category last name"
-            placeholder="Enter Last Name"
-            name="lastName"
-          />
-        </div>
+    <div className=" w-full flex flex-col gap-5">
+      <div className=" flex gap-4">
         <CustomInput
-          value={contactUsData.email}
+          value={contactUsData.firstName}
           onChange={handleChange}
-          label="Category email"
-          placeholder="Enter Email"
-          name="email"
+          label="First Name"
+          placeholder="Enter First Name"
+          name="firstName"
         />
-        <CustomTextArea
-          value={contactUsData.message}
+        <CustomInput
+          value={contactUsData.lastName}
           onChange={handleChange}
-          label="message"
-          placeholder="Enter message"
-          name="message"
-        />
-        <CustomButtons
-          mainButtonOnCLick={handleSubmit}
-          secondaryButtonOnCLick={handleReset}
+          label="Last Name"
+          placeholder="Enter Last Name"
+          name="lastName"
         />
       </div>
+      <CustomInput
+        value={contactUsData.email}
+        onChange={handleChange}
+        label="Email"
+        placeholder="Enter Email"
+        name="email"
+      />
+      <CustomTextArea
+        value={contactUsData.message}
+        onChange={handleChange}
+        label="message"
+        placeholder="Enter message"
+        name="message"
+      />
+      <CustomButtons
+        title="Submit"
+        mainButtonOnCLick={handleSubmit}
+        secondaryButtonOnCLick={handleReset}
+      />
     </div>
   );
 };

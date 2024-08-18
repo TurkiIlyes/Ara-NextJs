@@ -11,7 +11,7 @@ const realtimeData = [
   {
     img: "/Imgs/OurProjects/Aradom.png",
     desc: "Solution digitale mobile dédiée pour la SMART building Suivi et pilotage des installations (air conditionné – Eclairage - accès – équipements de restauration - parking",
-  },
+  }, 
   {
     img: "/Imgs/OurProjects/Aratrash.png",
     desc: "Manufacturing execution system [MES 4.0] Solution digitale de pilotage des processus industriels",

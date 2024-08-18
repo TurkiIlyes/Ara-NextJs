@@ -9,33 +9,33 @@ import AraStats from "./AraStats/AraStats";
 
 import { fetchProject } from "@/utils/Api/projectAPi";
 import ContactUs from "./ContactUs/ContactUs";
-
+import { getServerSession } from "next-auth";
+import authOptions from "@/lib/NextAuth/authOptions";
 const HomePage = async () => {
+  const session = await getServerSession(authOptions);
+  const isLogged = session?.user?.id ? true : false;
   const projects = await fetchProject();
   const MDTRProjects = projects.filter((project) => project.type === "MDTR");
   const GDEEProjects = projects.filter((project) => project.type === "GDEE");
-  console.log("OurProjects");
-  console.log(MDTRProjects);
-  console.log(GDEEProjects);
   return (
     <div className=" relative">
       <Hero />
       <div
         style={{
           backgroundImage: "url('/Imgs/back.png')",
-          backgroundPosition: "center", // Centers the image
-          backgroundRepeat: "repeat", // Prevents the image from repeating
+          backgroundPosition: "center", 
+          backgroundRepeat: "repeat", 
         }}
       >
         <Features />
-        <SectionContainer title="Qui Sommes Nous">
+        <SectionContainer id="about" title="Qui Sommes Nous">
           <WhoWeAre />
         </SectionContainer>
-        <SectionContainer title="Nos Activités">
+        <SectionContainer id="activites" title="Nos Activités">
           <OurServices />
         </SectionContainer>
 
-        <SectionContainer title="Nos Projets">
+        <SectionContainer id="projets" isLogged={isLogged} title="Nos Projets">
           {projects.length > 0 ? (
             <OurProjects
               MDTRProjects={MDTRProjects}
@@ -50,13 +50,13 @@ const HomePage = async () => {
           )}
         </SectionContainer>
 
-        <SectionContainer title="Nos Clients">
+        <SectionContainer id="clients" title="Nos Clients">
           <OurClientsSwiper />
         </SectionContainer>
-        <SectionContainer title="ARA on Chiffres">
+        <SectionContainer id="chiffres" title="ARA on Chiffres">
           <AraStats />
         </SectionContainer>
-        <SectionContainer title="Contact Us">
+        <SectionContainer id="contact" title="Contact Us">
           <ContactUs />
         </SectionContainer>
       </div>

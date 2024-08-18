@@ -6,8 +6,8 @@ import { faPenToSquare, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import EditProject from "./EditProject/EditProject";
+import { useRouter } from "next/navigation";
 
-// import EditProject from ""
 
 const ProjectBox = ({
   img,
@@ -24,11 +24,14 @@ const ProjectBox = ({
   id: string;
   isLogged: boolean;
 }) => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
 
   const [isLoading, executeCreateOrder] = useApiCallWithToast({
     apiCallFunction: () => dispatch(removeProject(id)),
-    handleSuccess: () => {},
+    handleSuccess: () => {
+      router.refresh();
+    },
     messages: {
       loading: "Removing item...",
       success: "Item removed from basket!",
@@ -48,7 +51,7 @@ const ProjectBox = ({
         height={800}
         className={`absolute -top-8 ${
           index % 2 === 0 ? "left-8" : "right-8"
-        } w-40 aspect-[6/2]`}
+        } w-40 aspect-[6/2] bg-white px-1 py-1 rounded-xl `}
       />
       <p className=" text-lg leading-loose font-medium text-grayscale-800 ">
         {desc}

@@ -29,7 +29,7 @@ const CustomTextArea = ({
           onChange={onChange}
           placeholder={placeholder}
           disabled={disabled}
-          className=" w-full h-16 min-h-12 py-2 text-sm font-normal placeholder-grayscale-700 bg-transparent outline-none"
+          className=" w-full h-16 min-h-16 py-2 text-sm font-normal placeholder-grayscale-700 bg-transparent outline-none"
         ></textarea>
       </div>
       {children}

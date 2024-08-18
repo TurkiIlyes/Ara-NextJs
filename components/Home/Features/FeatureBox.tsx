@@ -19,8 +19,7 @@ const FeatureBox = ({ title, description, icon }: props) => {
         />
         <FontAwesomeIcon
           icon={icon}
-          size="3x"
-          className=" absolute text-white"
+          className=" absolute w-16 h-16 text-white"
         />
       </div>
 

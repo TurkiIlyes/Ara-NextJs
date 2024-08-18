@@ -23,11 +23,31 @@ const WhoWeAre = () => {
           contribuant à leur transformation numérique et à leur succès
           industriel.
         </p>
-        <div className="inline-flex gap-4 w-[60px] ml-[20%] mt-[20px]">
-          <img src="/Imgs/Flags/Tunisia.png" />
-          <img src="/Imgs/Flags/Algeria.png" />
-          <img src="/Imgs/Flags/Italia.png" />
-          <img src="/Imgs/Flags/Marroco.png" />
+        <div className=" flex justify-end gap-4">
+          <Image
+            src="/Imgs/Flags/Tunisia.png"
+            alt="Tunisia"
+            width={40}
+            height={40}
+          />
+          <Image
+            src="/Imgs/Flags/Algeria.png"
+            alt="Algeria"
+            width={40}
+            height={40}
+          />
+          <Image
+            src="/Imgs/Flags/Italia.png"
+            alt="Italia"
+            width={40}
+            height={40}
+          />
+          <Image
+            src="/Imgs/Flags/Marroco.png"
+            alt="Marroco"
+            width={40}
+            height={40}
+          />
         </div>
       </div>
       <div className=" w-7/12 relative hidden sm:flex flex-col gap-4 ">

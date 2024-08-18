@@ -42,31 +42,39 @@ const EditProject = ({
       <DialogTrigger className=" h-6 w-6 flex items-center justify-center bg-grayscale-900 rounded-full">
         <FontAwesomeIcon icon={faPenToSquare} className="w-3 h-3 text-white" />
       </DialogTrigger>
-      <DialogContent className=" flex flex-col items-center gap-6 w-full px-14 ">
-        <DialogTitle className="text-center text-xl capitalize text-grayscale-900 font-medium ">
+      <DialogContent className=" sm:max-w-[800px] flex flex-col gap-6 px-4 rounded-sm ">
+        <DialogTitle className="text-center text-2xl tracking-wider capitalize text-grayscale-900 text-opacity-70 font-medium ">
           Edit project
         </DialogTitle>
-        <DialogDescription className=" w-9/12  flex flex-col gap-4 ">
-          <CustomSelect<"MDTR" | "GDEE">
-            label="Type"
-            value={projectData.type}
-            onChange={handleTypeChange}
-            data={typeData}
-          />
+        <DialogDescription className="flex flex-col gap-6 ">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+            <div className=" flex flex-col  gap-8 ">
+              <CustomSelect<"MDTR" | "GDEE">
+                label="Type"
+                value={projectData.type}
+                onChange={handleTypeChange}
+                data={typeData}
+              />
 
-          <CustomTextArea
-            value={projectData.name}
-            onChange={handleChange}
-            label="Project Name"
-            placeholder="Enter Project name"
-            name="name"
-          />
-          <CustomSelectImage
-            label="Project Image"
-            image={projectData.image || ""}
-            handleImageChange={handleImageChange}
-          />
+              <CustomTextArea
+                value={projectData.name}
+                onChange={handleChange}
+                label="Project Name"
+                placeholder="Enter Project name"
+                name="name"
+              />
+            </div>
+            <div className="">
+              <CustomSelectImage
+                label="Project Image"
+                image={projectData.image || ""}
+                handleImageChange={handleImageChange}
+              />
+            </div>
+          </div>
+
           <CustomButtons
+            title="Edit"
             mainButtonOnCLick={handleSubmit}
             secondaryButtonOnCLick={handleReset}
           />

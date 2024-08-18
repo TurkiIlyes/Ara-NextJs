@@ -19,7 +19,6 @@ const swiperData = [
   "/Imgs/OurClient/Client2.png",
   "/Imgs/OurClient/Client1.png",
   "/Imgs/OurClient/Client2.png",
-  
 ];
 
 import OurClientsSlide from "./OurClientsSlide";
@@ -30,20 +29,20 @@ const OurClientsSwiper = () => {
       <Swiper
         grabCursor={true}
         loop={true}
-        spaceBetween="10"
-        slidesPerView={3}
+        spaceBetween="30"
+        slidesPerView={2}
         breakpoints={{
           576: {
-            slidesPerView: 4,
+            slidesPerView: 2,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 3,
           },
           992: {
-            slidesPerView: 5,
+            slidesPerView: 4,
           },
           1200: {
-            slidesPerView: 7,
+            slidesPerView: 5,
           },
         }}
         centeredSlides={true}

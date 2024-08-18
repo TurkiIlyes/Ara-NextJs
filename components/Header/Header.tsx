@@ -4,6 +4,33 @@ import HeaderNavBar from "../NavBar/HeaderNavBar";
 import { useEffect, useState } from "react";
 import HeaderMobileNavBar from "../NavBar/HeaderMobileNavBar";
 
+const links = [
+  {
+    title: "Ara Company",
+    link: "#about",
+  },
+  {
+    title: "Activités",
+    link: "#activites",
+  },
+  {
+    title: "Projets",
+    link: "#projets",
+  },
+  {
+    title: "Clients",
+    link: "#clients",
+  },
+  {
+    title: "Chiffres",
+    link: "#chiffres",
+  },
+  {
+    title: "Contact Us",
+    link: "#contact",
+  },
+];
+
 const Header = ({
   session,
 }: {
@@ -38,12 +65,12 @@ const Header = ({
         isSticky ? "bg-white text-black shadow-md" : "bg-transparent text-white"
       } ${isSticky ? "fixed top-0 left-0" : "absolute top-0 left-0"}`}
     >
-      <div className="container h-28 flex items-center py-4 px-6">
+      <div className="container h-[104px] flex items-center py-4 px-6">
         <Link href="/" className=" text-xl font-semibold ">
           Ara consulting
         </Link>
-        <HeaderNavBar session={session} />
-        <HeaderMobileNavBar session={session} />
+        <HeaderNavBar session={session} links={links} />
+        <HeaderMobileNavBar session={session} links={links} />
       </div>
     </header>
   );

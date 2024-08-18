@@ -13,33 +13,12 @@ import {
 import Link from "next/link";
 import SignOutButton from "./SignOutButton";
 
-const links = [
-  {
-    title: "ARA COMPANY",
-    link: "/",
-  },
-  {
-    title: "Activités",
-    link: "/about",
-  },
-  {
-    title: "Projets",
-    link: "/contact",
-  },
-  {
-    title: "Clients",
-    link: "/blog",
-  },
-  {
-    title: "Contact Us",
-    link: "/portfolio",
-  },
-];
-
 const HeaderMobileNavBar = ({
   session,
+  links,
 }: {
   session?: { user?: { id?: string } } | null;
+  links: { title: string; link: string }[];
 }) => {
   console.log("HeaderMobileNavBar");
   console.log(session);
@@ -63,8 +42,8 @@ const HeaderMobileNavBar = ({
               );
             })}
             {session?.user?.id && (
-              <div className=" px-6 py-2">
-                <SignOutButton />
+              <div className=" px-4 py-2">
+                <SignOutButton className=" text-lg font-medium " />
               </div>
             )}
           </div>

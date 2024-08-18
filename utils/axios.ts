@@ -10,11 +10,9 @@ instance.interceptors.request.use(
     let token: string | null = null;
 
     if (typeof window === "undefined") {
-      // Server-side
       const session = await getServerSession(authOptions);
       token = session?.user?.token || null;
     } else {
-      // Client-side
       const session = await getSession();
       token = session?.user?.token || null;
     }

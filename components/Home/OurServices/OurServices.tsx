@@ -1,4 +1,9 @@
-import { faCircleNodes ,faRobot, faLaptopCode, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleNodes,
+  faRobot,
+  faLaptopCode,
+  faMobileScreen,
+} from "@fortawesome/free-solid-svg-icons";
 import ServiceBox from "./ServiceBox";
 
 const servicesData = [
@@ -30,7 +35,7 @@ const servicesData = [
 
 const OurServices = () => {
   return (
-    <div className=" grid grid-cols-[240px] sm:grid-cols-[240px,240px] justify-around gap-y-16 ">
+    <div className=" grid grid-cols-[290px] sm:grid-cols-[290px,290px] justify-around gap-y-16 ">
       {servicesData.map((item, e) => {
         return (
           <ServiceBox

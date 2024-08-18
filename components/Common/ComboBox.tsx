@@ -31,7 +31,6 @@ const ComboBox = ({
   label: string;
   selectedValue?: string;
   onChange?: (currentValue: string, name?: string) => void;
-  // onChange?: (currentValue: string, name?: string) => void;
   data: { value: string; label: string }[];
   className?: string;
   name?: string;

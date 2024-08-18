@@ -5,7 +5,7 @@ import {
   flexibleProjectType,
 } from "@/redux/Project/projectThunks";
 import { useEffect, useState } from "react";
-import { useAppDispatch } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   customHandleChange,
   customHandleSubmit,
@@ -14,6 +14,8 @@ import {
 import { validateFormFields } from "@/utils/validateFormFields";
 import { handleError } from "@/utils/handleError";
 import { verifyProjectValidationRules } from "@/utils/validationRules";
+import { urlToFile } from "@/utils/urlToFile";
+import { resetEditSuccess } from "@/redux/Project/projectSlice";
 
 const typeData = [
   {
@@ -38,6 +40,7 @@ const useEditProject = (
   desc: string,
   type: flexibleProjectType["type"]
 ) => {
+  const editSuccess = useAppSelector((state) => state.project.editSuccess);
   const dispatch = useAppDispatch();
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [projectData, setProjectData] =
@@ -51,6 +54,13 @@ const useEditProject = (
     }));
   }, []);
 
+  useEffect(() => {
+    if (editSuccess) {
+      resetEditSuccess();
+      window.location.reload();
+    }
+  }, [editSuccess]);
+
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
@@ -59,10 +69,10 @@ const useEditProject = (
     customHandleChange(e, setProjectData);
   };
 
-  const handleTypeChange = (status: flexibleProjectType["type"]) => {
+  const handleTypeChange = (type: flexibleProjectType["type"]) => {
     setProjectData((prevData) => ({
       ...prevData,
-      status,
+      type,
     }));
   };
 
@@ -75,11 +85,15 @@ const useEditProject = (
     );
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    const formImage = imageFile
+      ? imageFile
+      : await urlToFile(projectData.image as string, "image.png", "image/png");
+
     const dataToValidate: Record<string, string> = {
       name: projectData.name || "",
       type: projectData.type || "",
-      image: imageFile ? imageFile.type : "",
+      image: formImage ? formImage.type : "",
     };
     const newErrors = validateFormFields(
       dataToValidate,
@@ -91,7 +105,7 @@ const useEditProject = (
     }
     customHandleSubmit(
       e,
-      { image: imageFile },
+      { image: formImage },
       {
         name: projectData.name,
         type: projectData.type,

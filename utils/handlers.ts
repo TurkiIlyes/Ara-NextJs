@@ -30,14 +30,12 @@ export const customHandleSubmit = (
 
   const formData = new FormData();
 
-  // Append string fields to formData
   for (const key in stringFields) {
     if (stringFields[key] !== undefined) {
       formData.append(key, stringFields[key]!);
     }
   }
 
-  // Append file fields to formData
   for (const key in fileFields) {
     const fileOrFiles = fileFields[key];
     if (fileOrFiles) {
@@ -50,10 +48,8 @@ export const customHandleSubmit = (
       }
     }
   }
-  // Dispatch the action with the form data
   dispatchAction(formData);
 
-  // Call the reset handler
   resetHandler && resetHandler(e);
 };
 

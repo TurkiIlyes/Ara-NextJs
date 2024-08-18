@@ -15,12 +15,10 @@ const AboutUs = () => {
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
         delectus distinctio ipsam rem accusantium impedit.
       </p>
-      <div className="flex gap-5">
         <SocialMediaRoundedBox
           icon={faLinkedinIn}
           className="hover:bg-[#0077b5] text-[#0077b5]"
         />
-      </div>
     </div>
   );
 };
