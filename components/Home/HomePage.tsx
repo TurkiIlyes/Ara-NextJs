@@ -6,11 +6,13 @@ import OurServices from "./OurServices/OurServices";
 import OurProjects from "./OurProjects/OurProjects";
 import OurClientsSwiper from "../Swiper/OurClients/OurClientsSwiper";
 import AraStats from "./AraStats/AraStats";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 import { fetchProject } from "@/utils/Api/projectAPi";
 import ContactUs from "./ContactUs/ContactUs";
 import { getServerSession } from "next-auth";
 import authOptions from "@/lib/NextAuth/authOptions";
+import UpButton from "../Common/UpButton";
 const HomePage = async () => {
   const session = await getServerSession(authOptions);
   const isLogged = session?.user?.id ? true : false;
@@ -23,8 +25,8 @@ const HomePage = async () => {
       <div
         style={{
           backgroundImage: "url('/Imgs/back.png')",
-          backgroundPosition: "center", 
-          backgroundRepeat: "repeat", 
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
         }}
       >
         <Features />
@@ -35,7 +37,7 @@ const HomePage = async () => {
           <OurServices />
         </SectionContainer>
 
-        <SectionContainer id="projets" isLogged={isLogged} title="Nos Projets">
+        <SectionContainer id="projets" isLogged={isLogged} title="Nos Produits">
           {projects.length > 0 ? (
             <OurProjects
               MDTRProjects={MDTRProjects}
@@ -59,6 +61,8 @@ const HomePage = async () => {
         <SectionContainer id="contact" title="Contact Us">
           <ContactUs />
         </SectionContainer>
+
+        {/* <UpButton /> */}
       </div>
     </div>
   );

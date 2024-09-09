@@ -8,7 +8,6 @@ interface CustomError {
 
 export const handleError = (error: unknown) => {
   if (axios.isAxiosError(error)) {
-    console.log(error.response?.data);
     if (
       error.response?.status === 400 &&
       error.response?.data?.errors?.length > 0 &&

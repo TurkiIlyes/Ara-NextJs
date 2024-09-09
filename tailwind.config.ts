@@ -30,7 +30,8 @@ const config = {
     },
     extend: {
       colors: {
-        primary: "#0F626B",
+        primary: "rgb(120,100,208)",
+        // primary: "#0F626B",
         grayscale: {
           900: "#14142B",
           800: "#4E4B66",

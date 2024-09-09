@@ -3,7 +3,7 @@ import TopFooter from "./TopFooter";
 
 const Footer = () => {
   return (
-    <div className=" mt-10 ">
+    <div className="">
       <TopFooter />
       <BottomFooter />
     </div>

@@ -20,8 +20,6 @@ const HeaderMobileNavBar = ({
   session?: { user?: { id?: string } } | null;
   links: { title: string; link: string }[];
 }) => {
-  console.log("HeaderMobileNavBar");
-  console.log(session);
   return (
     <div className=" flex-1 flex md:hidden justify-end ">
       <Sheet>

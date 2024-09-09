@@ -1,6 +1,6 @@
 const ProgressContent = ({ progressCircle }: { progressCircle: any }) => {
   return (
-    <div className="absolute right-8 bottom-6 z-10 flex items-center justify-center">
+    <div className="absolute left-8 bottom-14 z-10 flex items-center justify-center">
       <div className="relative flex items-center justify-center">
         <svg viewBox="0 0 48 48" className="w-12 h-12">
           <circle

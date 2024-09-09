@@ -11,7 +11,7 @@ const realtimeData = [
   {
     img: "/Imgs/OurProjects/Aradom.png",
     desc: "Solution digitale mobile dédiée pour la SMART building Suivi et pilotage des installations (air conditionné – Eclairage - accès – équipements de restauration - parking",
-  }, 
+  },
   {
     img: "/Imgs/OurProjects/Aratrash.png",
     desc: "Manufacturing execution system [MES 4.0] Solution digitale de pilotage des processus industriels",
@@ -40,12 +40,9 @@ const OurProjects = async ({
   const isLogged = session?.user?.id ? true : false;
   return (
     <div className=" flex flex-col gap-14 ">
-      {MDTRProjects.length > 0 && (
+      {GDEEProjects.length > 0 && (
         <>
-          <span className=" text-xl font-medium text-primary ">
-            Monitoring et Digitalisation en Temps Réel
-          </span>
-          {MDTRProjects.map((item, i) => {
+          {GDEEProjects.map((item, i) => {
             return (
               <ProjectBox
                 key={i}
@@ -60,12 +57,9 @@ const OurProjects = async ({
           })}
         </>
       )}
-      {GDEEProjects.length > 0 && (
+      {MDTRProjects.length > 0 && (
         <>
-          <span className=" text-xl font-medium text-primary ">
-            Gestion Digitale de l&lsquo;Énergie et de l&lsquo;Environnement
-          </span>
-          {GDEEProjects.map((item, i) => {
+          {MDTRProjects.map((item, i) => {
             return (
               <ProjectBox
                 key={i}

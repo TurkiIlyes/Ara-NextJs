@@ -8,7 +8,6 @@ import Image from "next/image";
 import EditProject from "./EditProject/EditProject";
 import { useRouter } from "next/navigation";
 
-
 const ProjectBox = ({
   img,
   desc,
@@ -40,7 +39,7 @@ const ProjectBox = ({
   });
   return (
     <div
-      className={` relative w-full sm:w-3/4 px-8 py-8 border-[1px] border-grayscale-500 rounded-3xl ${
+      className={` relative w-full sm:w-3/4 px-8 py-8 border-[1px] border-primary rounded-3xl ${
         index % 2 === 0 ? "mr-auto" : "ml-auto"
       }`}
     >
@@ -49,9 +48,9 @@ const ProjectBox = ({
         alt="project"
         width={800}
         height={800}
-        className={`absolute -top-8 ${
+        className={`absolute -top-6 ${
           index % 2 === 0 ? "left-8" : "right-8"
-        } w-40 aspect-[6/2] bg-white px-1 py-1 rounded-xl `}
+        } w-40 aspect-[5/1.3] bg-white px-1 py-1 rounded-xl `}
       />
       <p className=" text-lg leading-loose font-medium text-grayscale-800 ">
         {desc}

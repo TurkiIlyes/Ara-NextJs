@@ -17,7 +17,6 @@ const useLogin = () => {
     const errorParam = params.get("error") as string | undefined;
     if (errorParam) {
       toast.error(decodeURIComponent(errorParam));
-      console.log(params.get("error"));
     }
 
     const successParam = params.get("success") as string | undefined;
@@ -39,9 +38,6 @@ const useLogin = () => {
       dataToValidate,
       credentialsSignInValidationRules
     );
-    console.log("test");
-    console.log(dataToValidate);
-    console.log(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
       handleError({ customError: true, errors: newErrors });

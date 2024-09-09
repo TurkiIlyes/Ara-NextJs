@@ -26,9 +26,6 @@ export const jwtCallback = async ({
     token.id = user._id;
     token.token = user.token;
   }
-  console.log("jwtCallback");
-  console.log(user);
-  console.log(token);
   return token;
 };
 
@@ -42,9 +39,6 @@ export const sessionCallback = async ({
   if (session.user) {
     session.user.id = token.id as string;
     session.user.token = token.token as string;
-    console.log("sessionCallback");
-    console.log(session);
-    console.log(token);
   }
   return session;
 };

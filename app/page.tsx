@@ -7,7 +7,6 @@ import authOptions from "@/lib/NextAuth/authOptions";
 
 const Home = async () => {
   const session = await getServerSession(authOptions);
-  console.log(session);
   return (
     <div className=" relative h-[500vh]">
       <Header session={session} />

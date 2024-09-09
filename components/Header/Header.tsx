@@ -3,10 +3,11 @@ import Link from "next/link";
 import HeaderNavBar from "../NavBar/HeaderNavBar";
 import { useEffect, useState } from "react";
 import HeaderMobileNavBar from "../NavBar/HeaderMobileNavBar";
+import Image from "next/image";
 
 const links = [
   {
-    title: "Ara Company",
+    title: "ARA COMPANY",
     link: "#about",
   },
   {
@@ -65,11 +66,19 @@ const Header = ({
         isSticky ? "bg-white text-black shadow-md" : "bg-transparent text-white"
       } ${isSticky ? "fixed top-0 left-0" : "absolute top-0 left-0"}`}
     >
-      <div className="container h-[104px] flex items-center py-4 px-6">
+      {/* px-6 */}
+      <div className="container h-[104px] flex items-center py-4 px-6 ">
         <Link href="/" className=" text-xl font-semibold ">
-          Ara consulting
+          {/* Ara consulting */}
+          <Image
+            src={`/Imgs/logo/${isSticky ? "dark-logo.png" : "light-logo.png"}`}
+            width={800}
+            height={800}
+            alt="logo"
+            className=" w-56 aspect-[4/1.5]"
+          />
         </Link>
-        <HeaderNavBar session={session} links={links} />
+        <HeaderNavBar session={session} links={links} isSticky={isSticky} />
         <HeaderMobileNavBar session={session} links={links} />
       </div>
     </header>

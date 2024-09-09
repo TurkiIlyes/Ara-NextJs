@@ -17,13 +17,13 @@ const QuickLinks = () => {
         <ul className="">
           {quickLinksData.map((e, i) => {
             return (
-              <li className=" group mb-8 " key={i}>
+              <li className=" group mb-6 " key={i}>
                 <Link href={e.url} className="flex items-center ">
                   <FontAwesomeIcon
                     icon={faLocationArrow}
-                    className=" w-4 h-4 text-[#3b5998] group-hover:rotate-45 transition-all duration-300"
+                    className=" w-4 h-4 text-primary group-hover:rotate-45 transition-all duration-300"
                   />
-                  <span className=" ml-4 text-xs font-normal text-opacity-90 text-grayscale-200 group-hover:text-[#1da1f2] transition-all duration-300">
+                  <span className=" ml-4 text-xs font-normal text-opacity-90 text-grayscale-200 group-hover:text-primary transition-all duration-300">
                     {e.title}
                   </span>
                 </Link>
