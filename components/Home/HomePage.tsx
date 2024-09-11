@@ -58,7 +58,7 @@ const HomePage = async () => {
         <SectionContainer id="chiffres" title="ARA on Chiffres">
           <AraStats />
         </SectionContainer>
-        <SectionContainer id="contact" title="Contact Us">
+        <SectionContainer id="contact" title="Contact">
           <ContactUs />
         </SectionContainer>
 

@@ -19,7 +19,7 @@ const CustomButtons = ({
         onClick={secondaryButtonOnCLick}
         className=" py-2 px-4 bg-transparent rounded-md text-base font-medium text-success-900 border-[1px] border-success-900 "
       >
-        Reset
+        Réinitialiser
       </button>
     </div>
   );

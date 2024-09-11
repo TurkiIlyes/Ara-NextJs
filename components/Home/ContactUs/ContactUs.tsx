@@ -20,15 +20,15 @@ const ContactUs = () => {
         <CustomInput
           value={contactUsData.firstName}
           onChange={handleChange}
-          label="First Name"
-          placeholder="Enter First Name"
+          label="Prénom"
+          placeholder="Entrez votre prénom"
           name="firstName"
         />
         <CustomInput
           value={contactUsData.lastName}
           onChange={handleChange}
-          label="Last Name"
-          placeholder="Enter Last Name"
+          label="Nom"
+          placeholder="Entrez votre nom"
           name="lastName"
         />
       </div>
@@ -36,18 +36,18 @@ const ContactUs = () => {
         value={contactUsData.email}
         onChange={handleChange}
         label="Email"
-        placeholder="Enter Email"
+        placeholder="Entrez votre email"
         name="email"
       />
       <CustomTextArea
         value={contactUsData.message}
         onChange={handleChange}
-        label="message"
-        placeholder="Enter message"
+        label="Message"
+        placeholder="Entrez votre message"
         name="message"
       />
       <CustomButtons
-        title="Submit"
+        title="Envoyer"
         mainButtonOnCLick={handleSubmit}
         secondaryButtonOnCLick={handleReset}
       />

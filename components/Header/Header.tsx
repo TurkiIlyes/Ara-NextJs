@@ -27,7 +27,7 @@ const links = [
     link: "#chiffres",
   },
   {
-    title: "Contact Us",
+    title: "Contact",
     link: "#contact",
   },
 ];

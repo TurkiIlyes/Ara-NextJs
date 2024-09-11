@@ -13,7 +13,7 @@ const QuickLinks = () => {
   return (
     <div className=" max-sm:w-1/2 px-4 h-full flex max-sm:justify-between gap-12 ">
       <div className=" flex flex-col gap-8 ">
-        <h2 className=" text-xl font-normal text-grayscale-200">Quick Link</h2>
+        <h2 className=" text-xl font-normal text-grayscale-200">Lien Rapide</h2>
         <ul className="">
           {quickLinksData.map((e, i) => {
             return (
