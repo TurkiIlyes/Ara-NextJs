@@ -15,7 +15,7 @@ const SectionHeader = ({
       <div className=" w-full flex justify-center items-center">
         <hr className=" group-hover:w-full transition-all duration-500  w-4/6 h-1 bg-grayscale-600 " />
         <div className=" absolute w-6 h-6 bg-white border-[3px] border-grayscale-600 rounded-full">
-          {isLogged && title === "Nos Projets" && <AddProject />}
+          {isLogged && title === "Nos Produits" && <AddProject />}
         </div>
       </div>
     </div>
